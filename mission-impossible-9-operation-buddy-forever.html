@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Forever Valentine</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ff5f6d, #ffc371);
+  color: white;
+  text-align: center;
+  padding-top: 80px;
+  overflow: hidden;
+}
+button {
+  padding: 14px 28px;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  margin: 15px;
+}
+#no {
+  position: absolute;
+}
+.fade {
+  animation: fadeIn 2.5s;
+}
+@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+.heart { font-size: 80px; }
+</style>
+</head>
+<body>
+
+<h1 class="fade">Will you be my Forever Valentine? ❤️</h1>
+
+<button onclick="yes()">Yes</button>
+<button id="no" onmouseover="moveNo()">No</button>
+
+<div id="content"></div>
+
+<script>
+function moveNo(){
+  const btn = document.getElementById("no");
+  btn.style.left = Math.random()*80 + "%";
+  btn.style.top = Math.random()*80 + "%";
+}
+
+function yes(){
+  const c = document.getElementById("content");
+  c.innerHTML = "<div class='heart fade'>❤️</div><p class='fade'>Since you said yes, block out February 14th, 2026 at 4:00 PM.</p>";
+  setTimeout(()=>{
+    c.innerHTML += "<p class='fade'>⚠️ This message will self destruct in 10 seconds. Call me.</p>";
+  }, 20000);
+  setTimeout(()=>{
+    c.innerHTML = "<h2 class='fade'>I can’t wait to marry you on December 31st, 2026 and make you Mrs. Pratt ❤️</h2>";
+  }, 30000);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mission Impossible 9: Operation Buddy</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle, #000 0%, #1a1a1a 100%);
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+button {
+  padding: 12px 24px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  margin: 10px;
+}
+.yes { background-color: #e63946; color: white; }
+.no { background-color: gray; color: white; }
+.fade { animation: fadeIn 2.5s; }
+@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+.counter { margin-top: 15px; font-size: 20px; }
+.hidden { display:none; }
+</style>
+</head>
+<body>
+
+<h1 class="fade">💌 Mission Impossible 9: Operation Buddy 💌</h1>
+<p class="fade">Agent <strong>Jessa Russell Caroline Conley</strong>,<br>
+You have been selected for a top‑secret Valentine’s Day challenge.</p>
+
+<p class="fade"><em>⚠️ Warning: Every incorrect answer triggers a kiss owed ❤️</em></p>
+
+<div class="counter">💋 Kisses Owed: <span id="kisses">0</span></div>
+
+<h2>Do you accept this challenge?</h2>
+<button class="yes" onclick="accept()">Yes</button>
+<button class="no" onclick="decline()">No</button>
+
+<div id="mission" class="hidden fade">
+  <h2>🔐 Your Mission</h2>
+  <p>Your objective is to decode hidden messages and uncover the location of a secret letter.</p>
+  <p><strong>Hint:</strong> The cipher shift is even, contains my favorite number, and is divisible by it.</p>
+</div>
+
+<script>
+let kisses = 0;
+function decline(){
+  kisses++;
+  document.getElementById("kisses").innerText = kisses;
+  alert("Wrong choice 😘 Kiss owed.");
+}
+function accept(){
+  document.getElementById("mission").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
